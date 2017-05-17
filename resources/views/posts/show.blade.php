@@ -39,8 +39,10 @@
 
             <form method="POST" action="/posts/{{$post->id}}/comments">
 
+                {{ csrf_field() }}
+
                 <div class="form-group">
-                    <textarea name="body" placeholder="Your comment here." class="form-control"></textarea>
+                    <textarea name="body" placeholder="Your comment here." class="form-control" required></textarea>
                 </div>
 
                 <div class="form-group">
@@ -48,6 +50,9 @@
                 </div>
 
             </form>
+
+            @include('layouts.errors')
+
 
         </div>
     </div>
