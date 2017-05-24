@@ -36,4 +36,12 @@ class User extends Authenticatable
     {
         $this->posts()->save($post);
     }
+
+    public function commentsOn(Post $post, $body)
+    {
+        return (new Comment(compact('body')))
+            ->user()->associate($this)
+            ->post()->associate($post)
+            ->save();
+    }
 }
