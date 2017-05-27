@@ -73,12 +73,21 @@
         <section>
                <h2>enter your post below:</h2>
 
-               <form method="post" action="validateContact">
-                 <div><textarea name="message" rows="10" cols="50" name="message"></textarea></div>
+               <form method="POST" action="/posts">
+                 {{ csrf_field() }}
+                 <div class="form-group">
+                   <textarea id="body" name="body" rows="10" cols="50" class="form-control"></textarea>
+                 </div>
                    <br>
-                   <div><input type="submit" value="submit"></div>
+                <div class="form-group">
+                   <button type="submit" class="btn btn-primary">Publish</button>
+                </div>
+
+                     @include ('layouts.errors')
                </form>
            </section>
+
+
 
       </div>
     </div>

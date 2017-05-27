@@ -32,9 +32,9 @@ Route::get('/timeline',  'PostsController@timeline');
 Route::get('/myprofile', function () {
     return view('myprofile');
 });
-Route::get('/newpost', function () {
-    return view('newpost');
-});
+// Route::get('/newpost', function () {
+//     return view('newpost');
+// });
 Route::get('/contact', function () {
     return view('contact');
 });
@@ -42,7 +42,7 @@ Route::get('/contact', function () {
 
 Route::get('/', 'PostsController@index')->name('home');
 
-Route::get('/posts/create', 'PostsController@create');
+Route::get('/newpost', 'PostsController@create');
 
 Route::post('/posts', 'PostsController@store');
 

@@ -24,7 +24,7 @@ class PostsController extends Controller
 
         $posts = Post::latest()->get();
 
-        return view('posts.index', compact('posts'));
+        return view('welcome', compact('posts'));
     }
 
     public function show(Post $post)
@@ -34,7 +34,7 @@ class PostsController extends Controller
 
     public function create()
     {
-        return view('posts.create');
+        return view('newpost');
     }
 
     public function store()
@@ -42,15 +42,14 @@ class PostsController extends Controller
 
         $this->validate(request(), [
 
-            'title' => 'required',
             'body' => 'required'
         ]);
 
         auth()->user()->publish(
-            new Post(request(['title', 'body']))
+            new Post(request(['body']))
         );
 
 
-        return redirect('/');
+        return redirect('/timeline');
     }
 }
