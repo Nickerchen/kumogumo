@@ -33,8 +33,6 @@
 
         @yield ('content')
 
-        @include ('layouts.sidebar')
-
       </div><!-- /.row -->
 
     </div><!-- /.container -->

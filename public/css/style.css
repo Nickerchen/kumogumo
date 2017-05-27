@@ -1,0 +1,231 @@
+body {
+font-family: 'Roboto', sans-serif;
+font-size: 20px;
+color: #333333;
+}
+
+p {
+line-height: 1.5;
+margin: 30px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Open Sans', sans-serif;
+font-weight: 100;
+}
+
+a {
+color: #3d315b;
+}
+
+a:hover, a:focus {
+color: #f8f991;
+}
+
+.navbar-custom {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 3;
+font-family: 'Open Sans', sans-serif;
+}
+
+.navbar-toggle {
+color: #777777;
+font-weight: 800;
+text-transform: uppercase;
+font-size: 12px;
+}
+
+.navbar-custom .nav li a {
+text-transform: uppercase;
+font-size: 12px;
+font-weight: 800;
+letter-spacing: 1px;
+}
+
+@media only screen and (min-width: 768px) {
+.navbar-custom {
+background: transparent;
+border-bottom: 1px solid transparent;
+}
+.navbar-custom .nav li a {
+color: white;
+padding: 20px;
+}
+.navbar-custom .nav li a:hover, .navbar-custom .nav li a:focus {
+color: #f8f991;
+}
+}
+
+.intro-header {
+background-color: #3d315b;
+margin-bottom: 50px;
+padding: 100px 0 50px;
+color: white;
+text-align: center;
+}
+
+.site-heading h1 {
+margin-top: 0;
+font-size: 50px;
+}
+
+.subheading {
+font-size: 24px;
+line-height: 1.1;
+display: block;
+font-family: 'Open Sans', sans-serif;
+font-weight: 300;
+margin: 10px 0 0;
+}
+
+@media only screen and (min-width: 768px) {
+.site-heading h1 {
+font-size: 80px;
+}
+}
+
+.post {
+border: 1px solid #a1a1a1;
+padding: 10px 40px;
+margin: 1px;
+}
+
+.post-content {
+font-size: 24px;
+margin-top: 30px;
+margin-bottom: 10px;
+}
+
+.post-meta {
+color: #777777;
+font-size: 18px;
+font-style: italic;
+margin-top: 0;
+}
+
+footer {
+
+font-size: 14px;
+text-align: center;
+margin-bottom: 0;
+}
+
+.footercontent li {
+display: inline;
+list-style-type: none;
+padding-right: 20px;
+font-family: 'Open Sans', sans-serif;
+}
+
+.btn {
+font-family: 'Open Sans', sans-serif;
+text-transform: uppercase;
+font-size: 14px;
+font-weight: 800;
+letter-spacing: 1px;
+border-radius: 0;
+padding: 15px 25px;
+}
+
+.btn-lg {
+font-size: 16px;
+padding: 25px 35px;
+}
+
+.btn-default:hover, .btn-default:focus {
+background-color: #3d315b;
+border: 1px solid #3d315b;
+color: white;
+}
+
+.kumogumo-brand {
+float: left;
+height: 50px;
+padding: 15px 15px;
+font-size: 20px;
+line-height: 20px;
+color: black;
+font-weight: 400;
+letter-spacing: 1px;
+}
+
+.kumogumo-brand:hover {
+color: #f8f991;
+text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+.kumogumo-brand {
+float: left;
+height: 50px;
+padding: 15px 15px;
+font-size: 20px;
+line-height: 20px;
+color: white;
+font-weight: 400;
+letter-spacing: 1px;
+}
+}
+
+
+.pager {
+margin: 20px 0 0;
+float: left;
+}
+
+.pager li>a, .pager li>span {
+font-family: 'Open Sans', sans-serif;
+text-transform: uppercase;
+font-size: 14px;
+font-weight: 800;
+letter-spacing: 1px;
+padding: 15px 25px;
+background-color: white;
+border-radius: 0;
+}
+
+.pager li>a:hover {
+color: white;
+background-color: #3d315b;
+border: 1px solid #3d315b;
+}
+
+.profilepic{
+    width:100px;
+    height:100px;
+    float:left;
+    margin: 20px;
+
+}
+
+#loginlist{
+  text-align: center;
+
+}
+#login , #register{
+  display:inline-block;
+  margin: 20px 0 0;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 15px 25px;
+  background-color: white;
+  border-radius: 0;
+}
+
+::-moz-selection {
+color: white;
+text-shadow: none;
+background: #3d315b;
+}
+
+::selection {
+color: white;
+text-shadow: none;
+background: #3d315b;
+}

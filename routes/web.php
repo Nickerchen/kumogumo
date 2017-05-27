@@ -11,9 +11,34 @@
 |
 */
 
-Route::get('/tasks', 'TasksController@index');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+//
+// Route::get('/followers', function () {
+//     return view('followers');
+// });
+// Route::get('/following', function () {
+//     return view('following');
+// });
+// Route::get('/login', function () {
+//     return view('login');
+// });
+// Route::get('/register', function () {
+//     return view('register');
+// });
+Route::get('/timeline',  'PostsController@timeline');
 
-Route::get('/tasks/{task}', 'TasksController@show');
+Route::get('/myprofile', function () {
+    return view('myprofile');
+});
+Route::get('/newpost', function () {
+    return view('newpost');
+});
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 
 Route::get('/', 'PostsController@index')->name('home');
 
@@ -23,7 +48,6 @@ Route::post('/posts', 'PostsController@store');
 
 Route::get('/posts/{post}', 'PostsController@show');
 
-Route::post('/posts/{post}/comments', 'CommentsController@store');
 
 
 Route::get('/register', 'RegistrationController@create');

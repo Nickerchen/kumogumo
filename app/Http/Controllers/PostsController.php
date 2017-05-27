@@ -11,6 +11,14 @@ class PostsController extends Controller
         $this->middleware('auth')->except(['index', 'show']);
     }
 
+    public function timeline()
+    {
+      $posts = Post::latest()->get();
+
+      return view('timeline', compact('posts'));
+
+    }
+
     public function index()
     {
 
