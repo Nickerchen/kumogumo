@@ -18,41 +18,7 @@
     <body>
 
 
-  <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-
-      <div class="navbar-header page-scroll">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    Menu <i class="fa fa-bars"></i>
-                </button>
-        <a class="kumogumo-brand" href="/">kumogumo</a>
-      </div>
-
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a href="/timeline">timeline</a>
-          </li>
-          <li>
-            <a href="/myprofile">my profile</a>
-          </li>
-          <li>
-            <a href="/following">following</a>
-          </li>
-          <li>
-            <a href="/followers">followers</a>
-          </li>
-          <li>
-            <a href="/newpost">new post</a>
-          </li>
-          <li>
-            <a href="#">logout</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  @include('layouts.nav')
 
   <header class="intro-header">
     <div class="container">
@@ -73,18 +39,24 @@
         <section>
                <h2>please enter a few details to register:</h2>
 
-               <form method="post" action="validateContact">
+               <form method="POST" action="/register">
+                   {{ csrf_field()}}
                    <div>username:</div>
-                   <div><input type="text" size="30" maxlength=" 50" name="username"></div>
+                   <div><input type="text" class="form-control" id="name" name="name" required></div>
                    <div>e-mail adress:</div>
-                   <div><input type="email" size="30" maxlength="50" name="email"></div>
+                   <div><input type="email" class="form-control" id="email" name="email" required></div>
                    <div>password:</div>
-                   <div><input type="password" size="30" maxlength=" 50" name="pw"></div>
+                   <div><input type="password" class="form-control" id="password" name="password" required></div>
                    <div>confirm password:</div>
-                   <div><input type="password" size="30" maxlength=" 50" name="pw"></div>
+                   <div><input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required></div>
                    <br>
                    <div><input type="submit" value="submit"></div>
+
+                   @include('layouts.errors')
+
                </form>
+
+
            </section>
 
       </div>

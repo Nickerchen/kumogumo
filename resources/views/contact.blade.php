@@ -18,41 +18,7 @@
     <body>
 
 
-  <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-
-      <div class="navbar-header page-scroll">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    Menu <i class="fa fa-bars"></i>
-                </button>
-        <a class="kumogumo-brand" href="/">kumogumo</a>
-      </div>
-
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a href="/timeline">timeline</a>
-          </li>
-          <li>
-            <a href="/myprofile">my profile</a>
-          </li>
-          <li>
-            <a href="/following">following</a>
-          </li>
-          <li>
-            <a href="/followers">followers</a>
-          </li>
-          <li>
-            <a href="/newpost">new post</a>
-          </li>
-          <li>
-            <a href="#">logout</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+@include('layouts.nav')
 
   <header class="intro-header">
     <div class="container">
@@ -72,7 +38,6 @@
 
 
         <div class="post">
-          <h2 class="post-content">
               Inhaltlich verantwortlich im Sinne des Teledienstgesetzes:
 
 James Friesen
@@ -105,7 +70,6 @@ Für externe Links, auf die der Autor verweist, trägt er keinerlei Verantwortun
 
 
 Alle Rechte vorbehalten.
-                      </h2>
         </div>
 
       </div>
