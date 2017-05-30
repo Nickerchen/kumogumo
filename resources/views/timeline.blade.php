@@ -17,42 +17,8 @@
     </head>
     <body>
 
+@include('layouts.nav')
 
-  <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-
-      <div class="navbar-header page-scroll">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    Menu <i class="fa fa-bars"></i>
-                </button>
-        <a class="kumogumo-brand" href="/">kumogumo</a>
-      </div>
-
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a href="/timeline">timeline</a>
-          </li>
-          <li>
-            <a href="/myprofile">my profile</a>
-          </li>
-          <li>
-            <a href="/following">following</a>
-          </li>
-          <li>
-            <a href="/followers">followers</a>
-          </li>
-          <li>
-            <a href="/newpost">new post</a>
-          </li>
-          <li>
-            <a href="#">logout</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
   <header class="intro-header">
     <div class="container">
@@ -75,20 +41,6 @@
         @foreach ($posts as $post)
             @include ('posts.post')
         @endforeach
-
-        <!-- <div class="post">
-          <h2 class="post-content">
-                          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                      </h2>
-          <p class="post-meta">Posted by <a href="/myprofile">Benny</a> on 2017-04-18</p>
-        </div>
-
-        <div class="post">
-          <h2 class="post-content">
-                            {{$post->body}}
-                      </h2>
-          <p class="post-meta">Posted by <a href="/myprofile">{{ $post->user->name}}</a> on {{ $post->created_at->toFormattedDateString() }}</p>
-        </div> -->
 
 
         <ul class="pager">
