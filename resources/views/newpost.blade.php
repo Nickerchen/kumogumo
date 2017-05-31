@@ -43,10 +43,10 @@
                  {{ csrf_field() }}
                  <div class="form-group">
                    <textarea id="body" name="body" rows="10" cols="50" class="form-control"></textarea>
-                 </div>
+
                    <br>
-                <div class="form-group">
-                   <button type="submit" class="btn btn-primary">Publish</button>
+                
+                   <div><input type="submit" value="submit"></div>
                 </div>
 
                      @include ('layouts.errors')

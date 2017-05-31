@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use Auth;
 
 class PostsController extends Controller
 {
@@ -11,20 +12,14 @@ class PostsController extends Controller
         $this->middleware('auth')->except(['index', 'show']);
     }
 
+    
+
     public function timeline()
     {
-      $posts = Post::latest()->get();
+      $posts = Post::latest()->simplePaginate(10);;
 
       return view('timeline', compact('posts'));
 
-    }
-
-    public function index()
-    {
-
-        $posts = Post::latest()->get();
-
-        return view('welcome', compact('posts'));
     }
 
     public function show(Post $post)
@@ -50,6 +45,16 @@ class PostsController extends Controller
         );
 
 
+        return redirect('/timeline');
+    }
+
+    public function destroy($post_id)
+    {
+        $posts = Post::where('id', $post_id)->first();
+        if (Auth::user() != $posts->user){
+            return redirect()->back();
+        }
+        $posts->delete();
         return redirect('/timeline');
     }
 }

@@ -48,6 +48,7 @@
                    <div><input type="password" class="form-control" id="password" name="password"  required></div>
                    <br>
                    <div><input type="submit" value="submit"></div>
+                     @include('layouts.errors')
                </form>
            </section>
 

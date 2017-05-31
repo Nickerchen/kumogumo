@@ -17,7 +17,10 @@
             <a href="/timeline">timeline</a>
           </li>
           <li>
-            <a href="/myprofile">{{Auth::user()->name}}</a>
+            <a href="/searchusers">users</a>
+          </li>
+          <li>
+            <a href="/user/{{Auth::user()->id}}">{{Auth::user()->name}}</a>
           </li>
           <li>
             <a href="/newpost">new post</a>

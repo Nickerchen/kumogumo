@@ -17,15 +17,15 @@
     </head>
     <body>
 
-@include('layouts.nav')
 
+@include('layouts.nav')
 
   <header class="intro-header">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           <div class="site-heading">
-            <h1>timeline</h1>
+            <h1>my profile</h1>
           </div>
         </div>
       </div>
@@ -37,13 +37,22 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
 
+        <div class="post">
+          <h2 class="post-content">
+                           <h2>{{$user->name}}</h2>{{$user->description}}   </h2>
 
-        @foreach ($posts as $post)
-            @include ('posts.post')
-        @endforeach
+                      <ul id="loginlist">
+                        <li id="register">
+                          <a href="/following">8 following</a>
+                        </li>
+                        <li id="login">
+                          <a href="/followers">16 followers</a>
+                        </li>
+                      </ul>
+
+        </div>
 
 
-        {{ $posts->links() }}
       </div>
     </div>
   </div>

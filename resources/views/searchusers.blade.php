@@ -25,7 +25,7 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           <div class="site-heading">
-            <h1>my profile</h1>
+            <h1>search users</h1>
           </div>
         </div>
       </div>
@@ -36,22 +36,19 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
+        <section>
 
-        <div class="post">
-          <h2 class="post-content">
-                           <h2>Benny</h2>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-            </h2>
+               <form method="POST" action="/login">
+                   {{ csrf_field()}}
 
-                      <ul id="loginlist">
-                        <li id="register">
-                          <a href="/following">8 following</a>
-                        </li>
-                        <li id="login">
-                          <a href="/followers">16 followers</a>
-                        </li>
-                      </ul>
+                   <div>name:</div>
+                   <div><input type="text" class="form-control" id="name" name="name" ></div>
+                   <br>
+                   <div><input type="submit" value="submit"></div>
+                     @include('layouts.errors')
+               </form>
+           </section>
 
-        </div>
 
 
       </div>
