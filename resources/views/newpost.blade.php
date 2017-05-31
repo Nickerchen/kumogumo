@@ -42,10 +42,10 @@
                <form method="POST" action="/posts">
                  {{ csrf_field() }}
                  <div class="form-group">
-                   <textarea id="body" name="body" rows="10" cols="50" class="form-control"></textarea>
-
+                   <textarea id="body" name="body" rows="5" cols="25" class="form-control" maxlength="200"></textarea>
+                   <span id="characters">200 characters left</span>
                    <br>
-                
+
                    <div><input type="submit" value="submit"></div>
                 </div>
 
@@ -81,6 +81,16 @@
   <script src="http://code.jquery.com/jquery-latest.min.js"
         type="text/javascript"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script>
+    $('textarea').keyup(updateCount);
+    $('textarea').keydown(updateCount);
+
+    function updateCount() {
+        var limit = 200
+        var cs = $(this).val().length;
+        $('#characters').text(limit - cs + " characters left");
+    }</script>
 
 </body>
 </html>

@@ -35,9 +35,6 @@ Route::get('/searchusers', function () {
 
 Route::get('/user/{user}', 'ProfileController@show');
 
-
-//Route::get('/', 'PostsController@index')->name('home');
-
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
@@ -52,7 +49,6 @@ Route::get('/delete-post/{post_id}', [
     'uses' => 'PostsController@destroy' ,
     'as' => 'post.delete'
 ]);
-
 
 
 Route::get('/register', 'RegistrationController@create');

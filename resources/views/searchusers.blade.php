@@ -38,7 +38,7 @@
 
         <section>
 
-               <form method="POST" action="/login">
+               <form method="GET" action="/find">
                    {{ csrf_field()}}
 
                    <div>name:</div>
@@ -48,7 +48,6 @@
                      @include('layouts.errors')
                </form>
            </section>
-
 
 
       </div>
