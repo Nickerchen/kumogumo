@@ -35,6 +35,8 @@ Route::get('/searchusers', function () {
 
 Route::get('/user/{user}', 'ProfileController@show');
 
+Route::get('/find', 'ProfileController@find');
+
 Route::get('/', function () {
     return view('welcome');
 })->name('home');

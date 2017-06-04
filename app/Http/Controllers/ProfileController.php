@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Request;
 
 class ProfileController extends Controller
 {
@@ -10,4 +11,18 @@ class ProfileController extends Controller
     {
         return view('user', compact('user'));
     }
+
+    public function find(Request $request)
+    {
+      $users = User::where("name","=",$request)->select("id")->get();
+      $parameter=["user"=>$users];
+      return redirect()->action('ProfileController@show', '{$users->first()}');
+
+    //  $keyword = Request::get('keyword', '');
+  //    $users = User::SearchByKeyword($keyword)->get();
+      // return redirect()->action('ProfileController@show', users->id  );
+  //     return redirect()->action('ProfileController@show', ['id' => 1]);
+
+    }
+
 }

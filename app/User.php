@@ -42,11 +42,22 @@ class User extends Authenticatable
         return $this->belongsToMany('User', 'followers', 'follow_id', 'user_id')->withTimestamps();
     }
 
-// Get all users we are following
     public function following()
     {
         return $this->belongsToMany('User', 'followers', 'user_id', 'follow_id')->withTimestamps();
     }
+
+
+    public function scopeSearchByKeyword($query, $keyword)
+    {
+        if ($keyword!='') {
+            $query->where(function ($query) use ($keyword) {
+                $query->where("name", "LIKE","%$keyword%");
+            });
+        }
+        return $query;
+    }
+
 
 
 }
