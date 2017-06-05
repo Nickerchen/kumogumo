@@ -14,9 +14,11 @@ class ProfileController extends Controller
 
     public function find(Request $request)
     {
-      $users = User::where("name","=",$request)->select("id")->get();
+      $users = User::where("name","=",$request)->select("id");
       $parameter=["user"=>$users];
-      return redirect()->action('ProfileController@show', '{$users->first()}');
+      return redirect()->action('ProfileController@show', $users);
+
+
 
     //  $keyword = Request::get('keyword', '');
   //    $users = User::SearchByKeyword($keyword)->get();
