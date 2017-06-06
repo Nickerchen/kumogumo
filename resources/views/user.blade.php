@@ -48,9 +48,9 @@
                         <li>
                           <a href="/followers">16 followers</a>
                         </li>
-                        <!--li>
+                        <li>
                             @if(Auth::user()->id == $user->id)  <a href="/editdescription">edit description</a> @endif
-                        </li-->
+                        </li>
                       </ul>
 
         </div>

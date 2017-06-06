@@ -48,16 +48,5 @@ class User extends Authenticatable
     }
 
 
-    public function scopeSearchByKeyword($query, $keyword)
-    {
-        if ($keyword!='') {
-            $query->where(function ($query) use ($keyword) {
-                $query->where("name", "LIKE","%$keyword%");
-            });
-        }
-        return $query;
-    }
-
-
 
 }

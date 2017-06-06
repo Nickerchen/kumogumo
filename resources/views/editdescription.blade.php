@@ -39,7 +39,7 @@
         <section>
                <h2>enter your new description below:</h2>
 
-               <form method="POST" action="/update/{id}">
+               <form method="POST" action="/update/{{Auth::user()->id}}">
                  {{ csrf_field() }}
                  <div class="form-group">
                    <textarea id="body" name="body" rows="5" cols="25" class="form-control" maxlength="200"></textarea>

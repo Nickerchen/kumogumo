@@ -56,7 +56,7 @@ Route::get('/delete-post/{post_id}', [
     'as' => 'post.delete'
 ]);
 
-//Route::post('/update/{id}', 'ProfileController@update');
+Route::post('/update/{user}', 'ProfileController@update');
 
 
 Route::get('/register', 'RegistrationController@create');

@@ -43,9 +43,10 @@
 
                    <div>name:</div>
                    <div><input type="text" class="form-control" id="name" name="name" ></div>
+                   @include('layouts.errors')
                    <br>
                    <div><input type="submit" value="submit"></div>
-                     @include('layouts.errors')
+
                </form>
            </section>
 

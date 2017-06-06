@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use Request;
+//use Request;
+use Illuminate\Http\Request;
+
 
 class ProfileController extends Controller
 {
@@ -14,16 +16,23 @@ class ProfileController extends Controller
 
     public function find(Request $request)
     {
-      //$users = User::where("name","=",$request)->select("id");
-      //$parameter=["user"=>$users];
-      //return redirect()->action('ProfileController@show', $users);
+      $name = $request->input('name');
+      $user = User::where('name', '=', $name)->first();
+      if ($user== "")
+      return back()->withErrors([
+          'message' => 'this user does not exist'
+      ]);
+      else
+      return redirect()->action('ProfileController@show', $user->id);
 
+    }
 
-
-      $keyword = Request::get('keyword', '');
-      $users = User::SearchByKeyword($keyword)->get();
-      return redirect()->action('ProfileController@show', 3  );
-     // return redirect()->action('ProfileController@show', ['id' => 1]);
+    public function update(Request $request, User $user)
+    {
+        $description = $request->input('body');
+        $user->description = $description;
+        $user->save();
+        return redirect()->action('ProfileController@show', $user->id);
 
     }
 
