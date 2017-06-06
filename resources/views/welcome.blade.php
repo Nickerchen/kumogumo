@@ -48,11 +48,11 @@
                           simply log in or create an account and start connecting with others <br>
                       </h2>
                       @if (!Auth::check())
-                      <ul id="loginlist">
-                        <li id="register">
+                      <ul id="useritems">
+                        <li>
                           <a href="/register">register</a>
                         </li>
-                        <li id="login">
+                        <li>
                           <a href="/login">login</a>
                         </li>
                       </ul>

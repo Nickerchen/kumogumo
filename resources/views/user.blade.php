@@ -41,13 +41,16 @@
           <h2 class="post-content">
                            <h2>{{$user->name}}</h2>{{$user->description}}   </h2>
 
-                      <ul id="loginlist">
-                        <li id="register">
+                      <ul id="useritems">
+                        <li>
                           <a href="/following">8 following</a>
                         </li>
-                        <li id="login">
+                        <li>
                           <a href="/followers">16 followers</a>
                         </li>
+                        <!--li>
+                            @if(Auth::user()->id == $user->id)  <a href="/editdescription">edit description</a> @endif
+                        </li-->
                       </ul>
 
         </div>

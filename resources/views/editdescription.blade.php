@@ -25,7 +25,7 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           <div class="site-heading">
-            <h1>search users</h1>
+            <h1>edit description</h1>
           </div>
         </div>
       </div>
@@ -37,17 +37,22 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
         <section>
+               <h2>enter your new description below:</h2>
 
-               <form method="GET" action="#">
-                   {{ csrf_field()}}
-
-                   <div>name:</div>
-                   <div><input type="text" class="form-control" id="name" name="name" ></div>
+               <form method="POST" action="/update/{id}">
+                 {{ csrf_field() }}
+                 <div class="form-group">
+                   <textarea id="body" name="body" rows="5" cols="25" class="form-control" maxlength="200"></textarea>
+                   <span id="characters">200 characters left</span>
                    <br>
+
                    <div><input type="submit" value="submit"></div>
-                     @include('layouts.errors')
+                </div>
+
+                     @include ('layouts.errors')
                </form>
            </section>
+
 
 
       </div>
@@ -76,6 +81,16 @@
   <script src="http://code.jquery.com/jquery-latest.min.js"
         type="text/javascript"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script>
+    $('textarea').keyup(updateCount);
+    $('textarea').keydown(updateCount);
+
+    function updateCount() {
+        var limit = 200
+        var cs = $(this).val().length;
+        $('#characters').text(limit - cs + " characters left");
+    }</script>
 
 </body>
 </html>

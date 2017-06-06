@@ -33,6 +33,10 @@ Route::get('/searchusers', function () {
     return view('searchusers');
 });
 
+Route::get('/editdescription', function () {
+    return view('editdescription');
+});
+
 Route::get('/user/{user}', 'ProfileController@show');
 
 Route::get('/', function () {
@@ -49,6 +53,8 @@ Route::get('/delete-post/{post_id}', [
     'uses' => 'PostsController@destroy' ,
     'as' => 'post.delete'
 ]);
+
+//Route::post('/update/{id}', 'ProfileController@update');
 
 
 Route::get('/register', 'RegistrationController@create');

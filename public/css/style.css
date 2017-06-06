@@ -19,7 +19,7 @@ color: #3d315b;
 }
 
 a:hover, a:focus {
-color: #f8f991;
+color: #490C1D;
 }
 
 .navbar-custom {
@@ -55,7 +55,7 @@ color: white;
 padding: 20px;
 }
 .navbar-custom .nav li a:hover, .navbar-custom .nav li a:focus {
-color: #f8f991;
+color: #490C1D;
 }
 }
 
@@ -154,7 +154,7 @@ letter-spacing: 1px;
 }
 
 .kumogumo-brand:hover {
-color: #f8f991;
+color: #490C1D;
 text-decoration: none;
 }
 
@@ -202,11 +202,11 @@ border: 1px solid #3d315b;
 
 }
 
-#loginlist{
+#useritems{
   text-align: center;
 
 }
-#login , #register{
+#useritems li{
   display:inline-block;
   margin: 20px 0 0;
   font-family: 'Open Sans', sans-serif;
