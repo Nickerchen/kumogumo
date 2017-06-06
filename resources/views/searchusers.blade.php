@@ -38,7 +38,7 @@
 
         <section>
 
-               <form method="GET" action="#">
+               <form method="GET" action="find">
                    {{ csrf_field()}}
 
                    <div>name:</div>
