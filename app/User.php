@@ -37,5 +37,27 @@ class User extends Authenticatable
         $this->posts()->save($post);
     }
 
+    public function followers()
+    {
+        return $this->belongsToMany('User', 'followers', 'follow_id', 'user_id')->withTimestamps();
+    }
+
+    public function following()
+    {
+        return $this->belongsToMany('User', 'followers', 'user_id', 'follow_id')->withTimestamps();
+    }
+
+
+    public function scopeSearchByKeyword($query, $keyword)
+    {
+        if ($keyword!='') {
+            $query->where(function ($query) use ($keyword) {
+                $query->where("name", "LIKE","%$keyword%");
+            });
+        }
+        return $query;
+    }
+
+
 
 }
