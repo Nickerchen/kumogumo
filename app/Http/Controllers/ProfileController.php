@@ -3,17 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\User;
-//use Request;
+use Auth;
 use Illuminate\Http\Request;
 
 
 class ProfileController extends Controller
 {
-    public function show(User $user)
-    {
-        return view('user', compact('user'));
+//    public function show(User $user)
+//    {
+//        return view('user', compact('user'));
+//
+//    }
 
-    }
+public function show(User $user)
+{
+    $me = Auth::user();
+    $is_follow_button = !$me->isFollowing($user);
+    return view('user', compact('user'), ['is_follow_button' => $is_follow_button]);
+}
+
+
 
     public function find(Request $request)
     {

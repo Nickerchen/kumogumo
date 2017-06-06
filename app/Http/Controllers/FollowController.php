@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Follower;
+use App\User;
 use Auth;
 
 class FollowController extends Controller
@@ -10,24 +11,18 @@ class FollowController extends Controller
 
     public function follows($username)
     {
-        // Find the User. Redirect if the User doesn't exist
-        $user = User::where('username', $username)->firstOrFail();
-        // Find logged in User
-        $id = Auth::id();
-        $me = User::find($id);
+        $user = User::where('name', '=', $username)->firstOrFail();
+        $me = Auth::user();
         $me->following()->attach($user->id);
-        return redirect('/' . $username);
+        return redirect('/user/' . $user->id);
     }
 
 
 public function unfollows($username)
     {
-        // Find the User. Redirect if the User doesn't exist
-        $user = User::where('username', $username)->firstOrFail();
-        // Find logged in User
-        $id = Auth::id();
-        $me = User::find($id);
-
+        $user = User::where('name','=', $username)->firstOrFail();
+        $me = Auth::user();
         $me->following()->detach($user->id);
-        return redirect('/' . $username);
+        return redirect('/user/' . $user->id);
     }
+}

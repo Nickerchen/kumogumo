@@ -20,8 +20,8 @@
  });
 
  Route::group(['middleware' => 'auth'], function () {
-    Route::get('/follows/{username}', 'UserController@follows');
-    Route::get('/unfollows/{username}', 'UserController@unfollows');
+    Route::get('/follows/{username}', 'FollowController@follows');
+    Route::get('/unfollows/{username}', 'FollowController@unfollows');
 });
 
 Route::get('/timeline',  'PostsController@timeline');
