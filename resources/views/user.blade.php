@@ -36,24 +36,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-
-        <div class="post">
-          <h2 class="post-content">
-                           <h2>{{$user->name}}</h2>{{$user->description}}   </h2>
-
-                      <ul id="useritems">
-                        <li>
-                          <a href="/following">8 following</a>
-                        </li>
-                        <li>
-                          <a href="/followers">16 followers</a>
-                        </li>
-                        <li>
-                            @if(Auth::user()->id == $user->id)  <a href="/editdescription">edit description</a> @endif
-                        </li>
-                      </ul>
-
-        </div>
+            @include ('layouts.user')
 
 
       </div>

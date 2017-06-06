@@ -12,6 +12,7 @@ class ProfileController extends Controller
     public function show(User $user)
     {
         return view('user', compact('user'));
+
     }
 
     public function find(Request $request)

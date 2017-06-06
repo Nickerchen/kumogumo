@@ -11,13 +11,18 @@
 |
 */
 
-//
-// Route::get('/followers', function () {
-//     return view('followers');
-// });
-// Route::get('/following', function () {
-//     return view('following');
-// });
+
+ Route::get('/followers', function () {
+     return view('followers');
+ });
+ Route::get('/following', function () {
+     return view('following');
+ });
+
+ Route::group(['middleware' => 'auth'], function () {
+    Route::get('/follows/{username}', 'UserController@follows');
+    Route::get('/unfollows/{username}', 'UserController@unfollows');
+});
 
 Route::get('/timeline',  'PostsController@timeline');
 
