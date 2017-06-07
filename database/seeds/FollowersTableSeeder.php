@@ -18,25 +18,25 @@ class FollowersTableSeeder extends Seeder
       // User with ID 1 is following user with ID 2
       Follower::create(array(
           'user_id'     => '1',
-          'follower_id' => '2',
+          'follower_user_id' => '2',
       ));
 
       // User with ID 2 is following user with ID 3
       Follower::create(array(
           'user_id'     => '2',
-          'follower_id' => '3',
+          'follower_user_id' => '3',
       ));
 
       // User with ID 3 is following user with ID 4
       Follower::create(array(
           'user_id'     => '3',
-          'follower_id' => '4',
+          'follower_user_id' => '4',
       ));
 
       // User with ID 4 is following user with ID 1
       Follower::create(array(
           'user_id'     => '4',
-          'follower_id' => '1',
+          'follower_user_id' => '1',
       ));
     }
 }
