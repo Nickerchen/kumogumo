@@ -57,6 +57,10 @@
 
           </div>
 
+          @foreach ($users as $user)
+              @include ('layouts.user')
+          @endforeach
+
 
         <ul class="pager">
           <li class="next">

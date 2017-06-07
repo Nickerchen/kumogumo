@@ -3,24 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Follower;
 use Auth;
 use Illuminate\Http\Request;
 
 
 class ProfileController extends Controller
 {
-//    public function show(User $user)
-//    {
-//        return view('user', compact('user'));
-//
-//    }
 
-public function show(User $user)
-{
-    $me = Auth::user();
-    $is_follow_button = !$me->isFollowing($user);
-    return view('user', compact('user'), ['is_follow_button' => $is_follow_button]);
-}
+    public function show(User $user)
+    {
+        $me = Auth::user();
+        $is_follow_button = !$me->isFollowing($user);
+        $followingarray = Follower::where('follower_user_id' , '=', $user->id )->pluck('user_id');
+        $followingnumber = sizeof($followingarray);
+        $followersarray = Follower::where('user_id' , '=', $user->id )->pluck('user_id');
+        $followersnumber = sizeof($followersarray);
+        return view('user', compact('user'), ['is_follow_button' => $is_follow_button,'followingnumber' => $followingnumber, 'followersnumber' => $followersnumber]);
+    }
 
 
 

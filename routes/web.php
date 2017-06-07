@@ -12,12 +12,8 @@
 */
 
 
- Route::get('/followers', function () {
-     return view('followers');
- });
- Route::get('/following', function () {
-     return view('following');
- });
+ Route::get('/followers/{user}', 'FollowController@followers');
+ Route::get('/following/{user}', 'FollowController@following');
 
  Route::group(['middleware' => 'auth'], function () {
     Route::get('/follows/{username}', 'FollowController@follows');

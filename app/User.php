@@ -39,13 +39,9 @@ class User extends Authenticatable
 
     public function followers()
     {
-        return $this->belongsToMany('User', 'followers', 'follow_id', 'user_id')->withTimestamps();
+        return $this->belongsToMany('App\User', 'followers', 'user_id', 'follower_user_id')->withTimestamps();
     }
 
-//    public function following()
-//    {
-//        return $this->belongsToMany('User', 'followers', 'user_id', 'follow_id')->withTimestamps();
-//    }
 
     public function following()
     {
