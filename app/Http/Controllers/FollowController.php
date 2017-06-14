@@ -26,27 +26,14 @@ class FollowController extends Controller
         return redirect('/user/' . $user->id);
     }
 
-    /*public function followers(User $user)
+    public function followers(User $user)
     {
-        $user = User::where('name', $user)->firstOrFail();
-        $followers_count =  $user->followers()->count();
-        $list = $user->followers()->orderBy('name')->get();
-        $is_following = false;
+        $users = User::find($user->id)->followers;
+         //echo "<script>console.log( 'Debug Objects: " . $users . "' );</script>";
 
-        if (Auth::check()) {
-            //$is_edit_profile = (Auth::id() == $user->id);
-            $me = Auth::user();
-        //    $following_count = $is_edit_profile ? $me->following()->count() : 0;
-            $is_following = $me->isFollowing($user);
-        }
-        return view('followers', [
-            'user' => $user,
-            'followers_count' => $followers_count,
-            'following_count' => $following_count,
-            'is_following' => $is_following,
-            'list' => $list,
-        ]);
-    }*/
+
+        return view('followers', compact('users'));
+    }
 
     public function following(User $user)
     {
