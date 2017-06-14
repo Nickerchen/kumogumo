@@ -35,6 +35,7 @@ class FollowersTableSeeder extends Seeder
 
       // User with ID 4 is following user with ID 1
       Follower::create(array(
+
           'user_id'     => '4',
           'follower_user_id' => '1',
       ));

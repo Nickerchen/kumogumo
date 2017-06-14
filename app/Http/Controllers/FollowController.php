@@ -29,8 +29,6 @@ class FollowController extends Controller
     public function followers(User $user)
     {
         $users = User::find($user->id)->followers;
-         //echo "<script>console.log( 'Debug Objects: " . $users . "' );</script>";
-
 
         return view('followers', compact('users'));
     }
@@ -39,7 +37,6 @@ class FollowController extends Controller
     {
         $users = User::find($user->id)->following;
          //echo "<script>console.log( 'Debug Objects: " . $users . "' );</script>";
-
 
         return view('following', compact('users'));
 

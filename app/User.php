@@ -53,4 +53,9 @@ class User extends Authenticatable
         return !is_null($this->following()->where('user_id', $user->id)->first());
     }
 
+    public function followingPosts()
+    {
+        return $this->hasManyThrough('App\Post', 'App\Follower', 'follower_user_id', 'user_id', 'id' );
+    }
+
 }

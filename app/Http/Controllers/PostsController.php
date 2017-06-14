@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\Follower;
+use App\User;
 use Auth;
 
 class PostsController extends Controller
@@ -19,24 +20,27 @@ class PostsController extends Controller
     {
         $me = Auth::user();
 
-        $followingarray = Follower::where('follower_user_id' , '=', $me->id )->pluck('user_id');
-        $posts=collect();
+        $users = User::find($me->id)->following;
 
-        foreach($followingarray as $followinguser){
-                $posts = Post::where('user_id', '=', $followinguser )->latest()->simplePaginate(10);
-            }
-    //    $posts = $posts->sortByDesc(function ($post) {
-    //    return $post->created_at;
-    //});
+        $users = $users->pluck('id');
 
-        echo("<script>console.log('followingarray: ".$followingarray."');</script>");
-        echo("<script>console.log('posts: ".$posts."');</script>");
-        echo("<script>console.log('following: ".sizeof($followingarray)."');</script>");
 
-        //$posts = Post::latest()->simplePaginate(10);
+        $test = User::find($me->id)->followingPosts;
+
+
+        $posts = Post::where('user_id', $users)->get();
+
+
+        echo "<script>console.log( 'me id: " . $me->id . "' );</script>";
+        echo "<script>console.log( 'users: " . $users . "' );</script>";
+        echo "<script>console.log( 'posts: " . $posts . "' );</script>";
+        echo "<script>console.log( 'test: " . $test . "' );</script>";
+
+        $posts = Post::where('user_id', $users)->latest()->simplePaginate(10);
+
+
 
         return view('timeline', compact('posts'));
-
 
 
     }

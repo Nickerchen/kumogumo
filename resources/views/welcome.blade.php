@@ -15,8 +15,13 @@
         <!-- Styles -->
         <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
     </head>
-    <body>
+    <body onload="myFunction()">
 
+        <script>
+        function myFunction() {
+            alert("This website uses cookies. By using this site you are consenting to cookies being used.");
+        }
+        </script>
 
 @include('layouts.nav')
 
@@ -87,6 +92,7 @@
   <script src="http://code.jquery.com/jquery-latest.min.js"
         type="text/javascript"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 
 </body>
 </html>

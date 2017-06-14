@@ -18,25 +18,25 @@ class PostsTableSeeder extends Seeder
       Post::create(array(
           'user_id'     => '1',
           'id' => '1',
-          'body' => 'testbody1'
+          'body' => 'user 1 testbody 1'
       ));
 
       Post::create(array(
           'user_id'     => '2',
           'id' => '2',
-          'body' => 'testbody2'
+          'body' => 'user 2 testbody 1'
       ));
 
       Post::create(array(
           'user_id'     => '3',
           'id' => '3',
-          'body' => 'testbody3'
+          'body' => 'user 3 testbody 1'
       ));
 
       Post::create(array(
           'user_id'     => '4',
           'id' => '4',
-          'body' => 'testbody4'
+          'body' => 'user 4 testbody 1'
       ));
 
 
