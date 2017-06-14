@@ -3,12 +3,12 @@
        <h2>{{$user->name}}</h2>{{$user->description}}   </h2>
   <ul id="useritems">
     <li>
-      <a href="/following/{user}">
+      <a href="/following/{{$user->id}}">
           {{$followingnumber}} following</a>
     </li>
     <li>
-      <a href="/followers/{user}">{{$followersnumber}} followers</a>
-    </li>
+      <a href="/followers/{{$user->id}}">{{$followersnumber}} followers</a>
+  </li>
     <li>
         @if(Auth::user()->id == $user->id)  <a href="/editdescription">edit description</a> @endif
     </li>

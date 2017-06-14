@@ -37,36 +37,11 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
 
-          <div class="post">
-            <h2 class="post-content">
-                            <img class="profilepic" src="img/logocolor.png"><a href="#"<h2>Benny</h2></a> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-
-                        </h2>
-
-                        <ul id="loginlist">
-                          <li id="register">
-                            <a href="/following">8 following</a>
-                          </li>
-                          <li id="login">
-                            <a href="/followers">16 followers</a>
-                          </li>
-                          <li id="login">
-                            <a href="#">unfollow</a>
-                          </li>
-                        </ul>
-
-          </div>
-
           @foreach ($users as $user)
-              @include ('layouts.user')
+              @include ('layouts.otheruser')
           @endforeach
 
 
-        <ul class="pager">
-          <li class="next">
-            <a href="#">&larr; more</a>
-          </li>
-        </ul>
       </div>
     </div>
   </div>

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Follower;
 use App\User;
+use App\Follower;
 use Auth;
 
 class FollowController extends Controller
@@ -26,7 +26,7 @@ class FollowController extends Controller
         return redirect('/user/' . $user->id);
     }
 
-    public function followers(User $user)
+    /*public function followers(User $user)
     {
         $user = User::where('name', $user)->firstOrFail();
         $followers_count =  $user->followers()->count();
@@ -46,22 +46,15 @@ class FollowController extends Controller
             'is_following' => $is_following,
             'list' => $list,
         ]);
-    }
+    }*/
 
     public function following(User $user)
     {
-        $me = Auth::user();
-        $followers_count = $me->followers()->count();
-        $following_count = $me->following()->count();
-        $list = $me->following()->orderBy('name')->get();
-        $is_following = false;
+        $users = User::find($user->id)->following;
+         //echo "<script>console.log( 'Debug Objects: " . $users . "' );</script>";
 
-        return view('following', [
-            'user' => $me,
-            'followers_count' => $followers_count,
-            'following_count' => $following_count,
-            'is_following' => $is_following,
-            'list' => $list,
-        ]);
+
+        return view('following', compact('users'));
+
     }
 }
