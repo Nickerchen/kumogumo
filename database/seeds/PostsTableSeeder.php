@@ -33,11 +33,58 @@ class PostsTableSeeder extends Seeder
           'body' => 'user 3 testbody 1'
       ));
 
+        Post::create(array(
+            'user_id'     => '3',
+            'id' => '4',
+            'body' => 'user 3 testbody 2'
+        ));
+
+        Post::create(array(
+            'user_id'     => '3',
+            'id' => '5',
+            'body' => 'user 3 testbody 3'
+        ));
+
+        Post::create(array(
+            'user_id'     => '3',
+            'id' => '6',
+            'body' => 'user 3 testbody 4'
+        ));
+        Post::create(array(
+            'user_id'     => '3',
+            'id' => '7',
+            'body' => 'user 3 testbody 5'
+        ));
+
       Post::create(array(
           'user_id'     => '4',
-          'id' => '4',
+          'id' => '8',
           'body' => 'user 4 testbody 1'
       ));
+
+        Post::create(array(
+            'user_id'     => '4',
+            'id' => '9',
+            'body' => 'user 4 testbody 2'
+        ));
+
+        Post::create(array(
+            'user_id'     => '4',
+            'id' => '10',
+            'body' => 'user 4 testbody 3'
+        ));
+
+        Post::create(array(
+            'user_id'     => '4',
+            'id' => '11',
+            'body' => 'user 4 testbody 4'
+        ));
+
+        Post::create(array(
+            'user_id'     => '4',
+            'id' => '12',
+            'body' => 'user 4 testbody 5'
+        ));
 
 
     }
