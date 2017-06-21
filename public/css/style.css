@@ -271,3 +271,34 @@ color: white;
 background-color: #3d315b;
 border: 1px solid #3d315b;
 }
+
+body.cookiewarning {
+    padding-bottom: 15em;
+}
+body div.cookiewarning {
+    display: none;
+}
+body.cookiewarning div.cookiewarning {
+    padding: 1em;
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(0,0,0,.8);
+    color: white;
+}
+
+body .removecookie {
+    display: inline-block;
+}
+
+body.cookiewarning .removecookie {
+    display: none;
+}
+
+.btn-warning:hover, .btn-warning {
+    color: #fff;
+    background-color: #3d315b;
+    border-color: #3d315b;
+}
