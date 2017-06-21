@@ -30,6 +30,11 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/privacypolicy', function () {
+    return view('privacypolicy');
+});
+
+
 Route::get('/searchusers', function () {
     return view('searchusers');
 });

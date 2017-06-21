@@ -51,9 +51,8 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           <p class="copyright text-muted">
             <ul class ="footercontent">
-              <li> <a href="/contact">Kontakt</a></li>
-              <li> <a href="/contact">Impressum</a></li>
-              <li> <a href="/contact">Datenschutz</a></li>
+              <li> <a href="/contact">Kontakt und Impressum</a></li>
+              <li> <a href="/privacypolicy">Datenschutz</a></li>
               <li>James Friesen 2017</li>
             </ul>
           </p>

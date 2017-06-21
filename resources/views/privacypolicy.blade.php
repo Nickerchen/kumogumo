@@ -25,7 +25,7 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           <div class="site-heading">
-            <h1>edit description</h1>
+            <h1>Kontakt</h1>
           </div>
         </div>
       </div>
@@ -36,24 +36,17 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-        <section>
-               <h2>enter your new description below:</h2>
 
-               <form method="POST" action="/update/{{Auth::user()->id}}">
-                 {{ csrf_field() }}
-                 <div class="form-group">
-                   <textarea id="body" name="body" rows="5" cols="25" class="form-control" maxlength="200"></textarea>
-                   <span id="characters">200 characters left</span>
-                   <br>
+        <div class="post">
+            <p><strong>Allgemeine Datenschutzerklärung</strong></p>
+            <p>Durch die Nutzung unserer Website erklären Sie sich mit der Erhebung, Verarbeitung und Nutzung von Daten gemäß der nachfolgenden Beschreibung einverstanden. Unsere Website kann grundsätzlich ohne Registrierung besucht werden. Dabei werden Daten wie beispielsweise aufgerufene Seiten bzw. Namen der abgerufenen Datei, Datum und Uhrzeit zu statistischen Zwecken auf dem Server gespeichert, ohne dass diese Daten unmittelbar auf Ihre Person bezogen werden. Personenbezogene Daten, insbesondere Name, Adresse oder E-Mail-Adresse werden soweit möglich auf freiwilliger Basis erhoben. Ohne Ihre Einwilligung erfolgt keine Weitergabe der Daten an Dritte.</p>
 
-                   <div><input type="submit" value="submit"></div>
-                </div>
-
-                     @include ('layouts.errors')
-               </form>
-           </section>
+            <p><strong>Datenschutzerklärung für Cookies</strong></p>
+            <p>Unsere Website verwendet Cookies. Das sind kleine Textdateien, die es möglich machen, auf dem Endgerät des Nutzers spezifische, auf den Nutzer bezogene Informationen zu speichern, während er die Website nutzt. Cookies ermöglichen es, insbesondere Nutzungshäufigkeit und Nutzeranzahl der Seiten zu ermitteln, Verhaltensweisen der Seitennutzung zu analysieren, aber auch unser Angebot kundenfreundlicher zu gestalten. Cookies bleiben über das Ende einer Browser-Sitzung gespeichert und können bei einem erneuten Seitenbesuch wieder aufgerufen werden. Wenn Sie das nicht wünschen, sollten Sie Ihren Internetbrowser so einstellen, dass er die Annahme von Cookies verweigert.</p>
 
 
+            <p>Quelle: <a href="https://www.anwalt.de/vorlage/muster-datenschutzerklaerung.php">Muster-Datenschutzerklärung von anwalt.de</a></p>
+        </div>
 
       </div>
     </div>
@@ -80,16 +73,6 @@
   <script src="http://code.jquery.com/jquery-latest.min.js"
         type="text/javascript"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-  <script>
-    $('textarea').keyup(updateCount);
-    $('textarea').keydown(updateCount);
-
-    function updateCount() {
-        var limit = 200
-        var cs = $(this).val().length;
-        $('#characters').text(limit - cs + " characters left");
-    }</script>
 
 </body>
 </html>
