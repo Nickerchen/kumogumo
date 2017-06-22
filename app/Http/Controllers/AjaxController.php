@@ -9,7 +9,7 @@ class AjaxController extends Controller
 {
     public function match(Request $request)
     {
-        if (isset($request->userName)) {
+       if (isset($request->userName)) {
             $prefix = $request->userName;
         } else {
             $prefix = '';
@@ -20,6 +20,7 @@ class AjaxController extends Controller
         } else {
             return view('searchusers', ['userName' => $prefix, 'users' => array()]);
         }
+
     }
 
     public function viewJQueryJSON()

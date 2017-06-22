@@ -41,18 +41,19 @@
               <label>User Name:</label>
               <input type="text" name="userName" value="{{$userName or ''}}" autofocus onfocus="this.value = this.value;"
                      autocomplete="off" placeholder="User Name" onkeyup="ajaxUser(this.value)"/>
-              <input type="submit" value="Submit">
+              <!--input type="submit" value="Submit"-->
           </form>
 
           <h3>Please Select:</h3>
           <div id="userList"></div>
-          @foreach ($users as $user)
-              <a href="user/{{$user->id}}">{{$user->name}}</a> </BR>
-          @endforeach
+
           <script>
+
+
               function ajaxUser(userName) {
                   $("#userList").html("");
                   $.getJSON( "/ajaxJSONUserList?userName="+userName, function(data) {
+                      $("#userList").empty();
                       $.each(data, function(i,user) {
                           var link = "<a href=\"user/"+user.id+"\">"+ user.name + "</a><BR>";
                           $(link).appendTo("#userList");
