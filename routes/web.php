@@ -34,10 +34,12 @@ Route::get('/privacypolicy', function () {
     return view('privacypolicy');
 });
 
+Route::get('/simpleUserSearch', 'AjaxController@match');
 
-Route::get('/searchusers', function () {
-    return view('searchusers');
-});
+Route::get('/searchusers', 'AjaxController@viewJQueryJSON');
+
+Route::get('/ajaxJSONUserList', 'AjaxController@matchJSON');
+
 
 Route::get('/editdescription', function () {
     return view('editdescription');

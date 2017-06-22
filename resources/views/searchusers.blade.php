@@ -36,19 +36,30 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-        <section>
 
-               <form method="GET" action="find">
-                   {{ csrf_field()}}
+          <form method="get" action="/simpleUserSearch" id="form">
+              <label>User Name:</label>
+              <input type="text" name="userName" value="{{$userName or ''}}" autofocus onfocus="this.value = this.value;"
+                     autocomplete="off" placeholder="User Name" onkeyup="ajaxUser(this.value)"/>
+              <input type="submit" value="Submit">
+          </form>
 
-                   <div>name:</div>
-                   <div><input type="text" class="form-control" id="name" name="name" ></div>
-                   @include('layouts.errors')
-                   <br>
-                   <div><input type="submit" value="submit"></div>
-
-               </form>
-           </section>
+          <h3>Please Select:</h3>
+          <div id="userList"></div>
+          @foreach ($users as $user)
+              <a href="user/{{$user->id}}">{{$user->name}}</a> </BR>
+          @endforeach
+          <script>
+              function ajaxUser(userName) {
+                  $("#userList").html("");
+                  $.getJSON( "/ajaxJSONUserList?userName="+userName, function(data) {
+                      $.each(data, function(i,user) {
+                          var link = "<a href=\"user/"+user.id+"\">"+ user.name + "</a><BR>";
+                          $(link).appendTo("#userList");
+                      });
+                  })
+              };
+          </script>
 
 
       </div>
