@@ -64,7 +64,7 @@
   <hr>
 
         <div class="cookiewarning bg-warning">
-            <p>This website uses cookies. By using this site you are consenting to cookies being used.</p>
+            <p>This website uses cookies. By using this site you are consenting to cookies being used. Click <a href="/privacypolicy">here</a> for more information</p>
             <span class="btn btn-warning btn-xl">Accept</span>
         </div>
 
