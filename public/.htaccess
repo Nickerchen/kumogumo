@@ -18,3 +18,6 @@
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 </IfModule>
+<FilesMatch "\.(js|css|pdf|swf)$">
+Header set Cache-Control "max-age=604800"
+</FilesMatch>
