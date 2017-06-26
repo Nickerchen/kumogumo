@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use App\Follower;
 use App\User;
+use App\Role;
 use Auth;
 use Input;
 
@@ -99,7 +100,7 @@ class PostsController extends Controller
     public function destroy($post_id)
     {
         $posts = Post::where('id', $post_id)->first();
-        if (Auth::user() != $posts->user){
+        if (Auth::user() != $posts->user && !(Auth::user()->hasRole('Admin'))){
             return redirect()->back();
         }
         $posts->delete();

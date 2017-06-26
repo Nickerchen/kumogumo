@@ -26,8 +26,9 @@
             <a href="/newpost">new post</a>
           </li>
           <li>
-            <a href="/logout">logout</a>
+            <a href="/logout">logout{{Auth::user()->hasRole('Admin') ? ' (admin)' : ''}}</a>
           </li>
+
           @endif
 
 

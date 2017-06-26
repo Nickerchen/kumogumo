@@ -37,7 +37,7 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
 
-          <form method="get" action="/simpleUserSearch" id="form">
+          <form method="get" action="/searchusers" id="form">
               <label>User Name:</label>
               <input type="text" name="userName" value="{{$userName or ''}}" autofocus onfocus="this.value = this.value;"
                      autocomplete="off" placeholder="User Name" onkeyup="ajaxUser(this.value)"/>
