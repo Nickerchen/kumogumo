@@ -49,7 +49,7 @@
 
           <script>
 
-
+              //suche nach passenden usern und gebe das Ergebnis im div "userList" aus
               function ajaxUser(userName) {
                   $("#userList").html("");
                   $.getJSON( "/ajaxJSONUserList?userName="+userName, function(data) {

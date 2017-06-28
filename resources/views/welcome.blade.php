@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="small and tidy microblogging" />
+        <meta name="robots" content="all">
 
         <title>kumogumo</title>
 
