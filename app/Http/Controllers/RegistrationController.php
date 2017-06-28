@@ -6,11 +6,13 @@ use App\User;
 
 class RegistrationController extends Controller
 {
+    //Stelle den view register dar
     public function create()
     {
         return view('register');
     }
 
+    //Validiere und erstelle einen neuen Account
     public function store()
     {
         //validate

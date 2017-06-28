@@ -34,7 +34,6 @@ Route::get('/privacypolicy', function () {
     return view('privacypolicy');
 });
 
-Route::get('/simpleUserSearch', 'AjaxController@match');
 
 Route::get('/searchusers', 'AjaxController@viewJQueryJSON');
 

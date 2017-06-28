@@ -7,22 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class AjaxController extends Controller
 {
-    public function match(Request $request)
-    {
-       if (isset($request->userName)) {
-            $prefix = $request->userName;
-        } else {
-            $prefix = '';
-        }
-        if ($prefix !== '') {
-            $users = DB::table('users')->where('name', 'like', $prefix.'%')->get();
-            return view('searchusers', ['userName' => $prefix, 'users' => $users]);
-        } else {
-            return view('searchusers', ['userName' => $prefix, 'users' => array()]);
-        }
-
-    }
-
+    //Stelle den view searchuseres dar
     public function viewJQueryJSON()
     {
         $users = [];
@@ -30,12 +15,14 @@ class AjaxController extends Controller
         return view('searchusers', compact('users'));
     }
 
+    //übergebe die User an JSON
     public function matchJSON(Request $request)
     {
         $users = $this->queryUsers($request);
         return response()->json($users);
     }
 
+    //gebe die User die gefunden wurden zurück
     private function queryUsers(Request $request)
     {
         if (isset($request->userName)) {

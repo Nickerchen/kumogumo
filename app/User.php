@@ -42,6 +42,7 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Role', 'user_role', 'user_id', 'role_id');
     }
 
+    //check ob der User einer beliebigen Rolle zugehört
     public function hasAnyRole($roles)
     {
         if (is_array($roles)) {
@@ -58,6 +59,7 @@ class User extends Authenticatable
         return false;
     }
 
+    //check ob der User einer bestimmten Rolle zugehört
     public function hasRole($role)
     {
         if($this->roles()->where('name', $role)->first()){
@@ -76,6 +78,7 @@ class User extends Authenticatable
         return $this->belongsToMany('App\User', 'followers', 'follower_user_id');
     }
 
+    //sehe nach ob der eingeloggte User diesem User folgt
     public function isFollowing(User $user)
     {
         return !is_null($this->following()->where('user_id', $user->id)->first());
