@@ -49,7 +49,8 @@
                         kumogumo is a microblogging plattform to connect with friends and strangers <br>
                           we like to reduce fluff, to get to the core of what makes life interesting <br>
                           simply log in or create an account and start connecting with others <br>
-              <div class="fb-like" data-href="http://kumogumo.herokuapp.com/" data-width="50" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div></h2>
+
+             </h2>
                       @if (!Auth::check())
                       <ul id="useritems">
                         <li>
@@ -62,6 +63,7 @@
                       @endif
 
         </div>
+
 
 
       </div>
@@ -85,6 +87,7 @@
               <li> <a href="/contact">Kontakt und Impressum</a></li>
               <li> <a href="/privacypolicy">Datenschutz</a></li>
               <li>James Friesen 2017</li>
+                <div class="fb-like" data-href="http://kumogumo.herokuapp.com/" data-width="50" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
             </ul>
           </p>
         </div>
