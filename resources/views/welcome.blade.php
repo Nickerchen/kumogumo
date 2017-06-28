@@ -13,6 +13,14 @@
         <link href="{{ asset('css/style.css') }}" rel="stylesheet"  type="text/css">
     </head>
     <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v2.9";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
 
 @include('layouts.nav')
 
@@ -38,11 +46,10 @@
         <div class="post">
           <h2 class="post-content">
 
-
-                          kumogumo is a microblogging plattform to connect with friends and strangers <br>
+                        kumogumo is a microblogging plattform to connect with friends and strangers <br>
                           we like to reduce fluff, to get to the core of what makes life interesting <br>
                           simply log in or create an account and start connecting with others <br>
-                      </h2>
+              <div class="fb-like" data-href="http://localhost:8000/" data-width="50" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>                      </h2>
                       @if (!Auth::check())
                       <ul id="useritems">
                         <li>
@@ -74,6 +81,7 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           <p class="copyright text-muted">
             <ul class ="footercontent">
+
               <li> <a href="/contact">Kontakt und Impressum</a></li>
               <li> <a href="/privacypolicy">Datenschutz</a></li>
               <li>James Friesen 2017</li>
